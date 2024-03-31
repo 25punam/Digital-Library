@@ -6,13 +6,7 @@ def book_name(request):
     books = BookModel.objects.all()
     return render(request, 'book.html',{'books':books})
 
-# def book_page(request, b_id):
-#     book = get_object_or_404(BookModel, id=b_id)
-#     pages = PageModel.objects.filter(b_id_id=b_id)
-#     return render(request, 'page.html', {'pages': pages, 'book': book})
 
-
-#http://127.0.0.1:8000/book_id/page_num/
 def book_page(request, book_id, page_num):
     context = {}
     page_obj = PageModel.objects.get(b_id = book_id , page_no = page_num)
